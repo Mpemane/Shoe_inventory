@@ -1,35 +1,61 @@
-# Shoe_inventory
-# Project title: Shoe inventory
-## Project Description
-Python program that will read from the text file inventory.txt and perform the following on the data, to prepare for presentation to your managers
- ## Table of Content
- ### 1. Introduction
- ### 2. Technologies
- ### 3. Layout of the of the Jupyter Notebook
- ### 4. Conclusion
+# Shoe Inventory Management System
 
- ### Introduction
- The objective of this project was to write a python code that will keep track of shoe inventory. this achived via a series od methods and creating a Shoe class.
- ### Technologies
- The Technologies employed in this project are at follows:
- ### Libraries used:
-import csv
-<br />from tabulate import tabulate 
- ### Layout of the Jupyter NoteBook
-<br /> Creat the Shoe class
-<br />creat get_cost this method will return the cost of the shoe
-<br />get_quanty this function will return the quantity of the shoes
-<br />__str__ - This function returns a string representation of a class.
-<br />read_shoes_data,this function will open the file inventory.txt and read the data from this file the create shoes
-object and append this object into the shoes list
-<br />capture_shoes - this function will allow a user to capture data about a shoe and use this data to create a shoe object
-and append this object inside the shoe list.
-<br /> view_all - this function will iterate over all the shoes list and print the details of the shoes that you return from the __str__function.
-<br />re_stock - this function will find the shoe object with the lowest quantity, which is the shoes that need to be restocked.
-<br />seach_shoe - This function will search for a shoe from the list using the shoe code and return this object so that it will be printed
-<br />value_per_item - this function will calculate the total value for each item
-<br />value = cost * quantity). Print this information on the console for all the shoes.
-<br />highest_qty - Write code to determine the product with the highest quantity and print this shoe as being for sale.
- ### Conclusion 
- I was able to achive the objective of this project. with the following comments from the reviewer.
- <br />Excellent work on your resubmission, Kenneth. You have done well in this task and I appreciate the fact that you were patient enough to put to action the suggestions raised in the previous reviews . You are definitely understanding this concept now. You really nailed this task.
+This Python program implements a shoe inventory management system. It allows users to perform various operations such as reading shoe data from a file, capturing new shoe details, viewing all shoes, restocking shoes, searching for a shoe, and calculating the total value of the stock.
+
+## Files
+
+* `inventory.txt`: A text file containing the shoe inventory data in CSV format (comma-separated values).
+* `shoe_inventory.py`: The Python script containing the inventory management system code.
+* `README.md`: This file, providing documentation for the project.
+
+## Libraries
+
+* `csv`: Used for reading and writing CSV files.
+* `tabulate`: Used for displaying tabular data in a formatted way.
+
+## Class `Shoes`
+
+The `Shoes` class represents a shoe item with the following attributes:
+
+* `country`: The country where the shoe is made.
+* `code`: The unique code of the shoe.
+* `product`: The name of the shoe product.
+* `cost`: The cost of the shoe.
+* `quantity`: The quantity of the shoe in stock.
+
+It also includes the following methods:
+
+* `__init__(self, country, code, product, cost, quantity)`: Constructor to initialize the `Shoes` object.
+* `get_cost(self)`: Returns the cost of the shoe.
+* `set_quantity(self)`: Sets the quantity of the shoe.
+* `get_quanty(self)`: Returns the quantity of the shoe.
+* `__str__(self)`: Returns a string representation of the `Shoes` object.
+
+## Functions
+
+The program includes the following functions:
+
+* `read_shoes_data()`: Reads shoe data from `inventory.txt` and creates `Shoes` objects, storing them in a list.
+* `capture_shoes()`: Captures new shoe details from user input and creates a `Shoes` object, adding it to the list.
+* `view_all()`: Reads and displays all shoe data from `inventory.txt` in a tabular format.
+* `re_stock()`: Determines the shoe with the lowest quantity, prompts the user to restock, and updates the quantity in `inventory.txt`.
+* `seach_shoe()`: Searches for a shoe by code and displays its details.
+* `value_per_item()`: Calculates and displays the total value of each shoe item (cost * quantity).
+* `highest_qty()`: Finds and displays the shoe with the highest quantity.
+
+## How to Run
+
+1.  Ensure you have Python 3 installed.
+2.  Create an `inventory.txt` file in the same directory as `shoe_inventory.py`. The file should contain shoe data in CSV format, with the first line as a header.
+3.  Run the `shoe_inventory.py` script from the command line: `python shoe_inventory.py`.
+4.  Follow the menu prompts to perform various operations.
+
+## `inventory.txt` File Format
+
+The `inventory.txt` file should be formatted as follows:
+
+```csv
+Country,Code,Product,Cost,Quantity
+USA,SKU12345,Running Shoes,50.00,10
+UK,SKU67890,Formal Shoes,80.00,5
+...
